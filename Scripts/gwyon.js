@@ -96,7 +96,7 @@ function randomBlock() {
 }
 
 function lostGame() {
-	var col, row, lost;
+	var col;
 
 	// see if the top row is empty
 	for(col = 0; col < width; col++) {
@@ -107,16 +107,6 @@ function lostGame() {
 
 	return false;
 }
-
-var width = 10;
-var height = 16;
-var START_X = 4;
-var START_Y = 0;
-var newBlock = true;
-var currentBlock;
-var current;
-var current_x;
-var current_y;
 
 function on(x, y) {
 	$("#" + String(x) + "_" + String(y)).addClass("on");
