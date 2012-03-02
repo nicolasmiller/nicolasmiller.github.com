@@ -45,11 +45,30 @@ function rotate() {
 		return;
 	}
 	var i;
+	var rotated = jQuery.extend(true, [], blocks["i"]);
+	var rotateLegal = true;
+
 	for(i = 0; i < current.length; i++) {
 		var x = current[i][0];
 		var y = current[i][1];
-		current[i][0] = -1 * y;
-		current[i][1] = x;
+		var x_prime = -1 * y;
+		var y_prime = x;
+		var x_prime_pos = x_prime + current_x;
+		var y_prime_pos = y_prime + current_y; 
+		if(x_prime_pos < 0 || y_prime_pos < 0) rotateLegal = false;
+		if(x_prime_pos >= width || y_prime_pos >= height) rotateLegal = false;
+		if(isOn(x_prime_pos, y_prime_pos)) {
+			rotateLegal = false;
+		}
+		rotated[i][0] = x_prime;
+		rotated[i][1] = y_prime;
+	}
+
+	if(rotateLegal) {
+		for(i = 0; i < current.length; i++) {
+			current[i][0] = rotated[i][0];
+			current[i][1] = rotated[i][1];
+		}
 	}
 }
 
