@@ -25,9 +25,9 @@ li {
 
 .on {
 	background: #59bceb;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#75d2f7', endColorstr='#41aae1');
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #75d2f7), color-stop(100%, #41aae1));
-	background-image: -moz-linear-gradient(top, #75d2f7 0%, #41aae1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#808080', endColorstr='#303030');
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #808080), color-stop(100%, #303030));
+	background-image: -moz-linear-gradient(top, #808080 0%, #303030 100%);
 }
 
 ul {
