@@ -42,11 +42,12 @@
 
 			for(var i = 0; i < name.length; i++) {
 				    var character = name[i] === ' ' ? '&nbsp' : name[i];
-				    $("#name").append($('<div>').addClass('letter sans').html(character)
-                                .css('float', 'left')
-                                .css('color', grays[0])
-							    .hover(set_color(random_gray()),
-                                   animate_to_color(grays[0])));
+				    $("#name").append($('<div>')
+                    .addClass('letter sans')
+                    .html(character)
+                    .css('float', 'left')
+                    .css('color', grays[0])
+		            .hover(set_color(random_gray()), animate_to_color(grays[0])));
 			}
 			
 			$("#name")
