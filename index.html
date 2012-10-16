@@ -45,8 +45,8 @@
 				    $("#name").append($('<div>')
                     .addClass('letter sans')
                     .css({'float': 'left', 'color': grays[0]})
-                    .html(character)
-		            .hover(set_color(random_gray()), animate_to_color(grays[0])));
+		            .hover(set_color(random_gray()), animate_to_color(grays[0]))
+                    .html(character));
 			}
 			
 			$("#name")
