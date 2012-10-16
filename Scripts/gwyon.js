@@ -325,7 +325,6 @@ function main() {
 		updateScore();
 		current_type = randomBlock();
         current_color = random_gray();
-        console.log(current_color);
 		current = jQuery.extend(true, [], blocks[current_type]);
 		drawBlock(START_X, START_Y);
 		current_x = START_X;
