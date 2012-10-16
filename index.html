@@ -22,7 +22,8 @@
 	<script>
 		$(document).ready(function () {
 			var name = "Nicolas Steven Miller",
-                grays = ['#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa', '#bbb', '#ccc'];
+                grays = ['#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa', '#bbb', '#ccc']
+                i;
 
             function random_gray() {
                 return grays[4 + Math.floor(Math.random() * (grays.length - 4))];
@@ -40,13 +41,12 @@
                 }
             }
 
-			for(var i = 0; i < name.length; i++) {
-				    var character = name[i] === ' ' ? '&nbsp' : name[i];
+			for(i = 0; i < name.length; i++) {
 				    $("#name").append($('<div>')
                     .addClass('letter sans')
                     .css({'float': 'left', 'color': grays[0]})
 		            .hover(set_color(random_gray()), animate_to_color(grays[0]))
-                    .html(character));
+                    .html(name[i] === ' ' ? '&nbsp' : name[i]));
 			}
 			
 			$("#name")
