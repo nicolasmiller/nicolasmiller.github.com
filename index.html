@@ -21,9 +21,10 @@
 	</body>
 	<script>
 		$(document).ready(function () {
-			var name = "Nicolas Steven Miller",
+			var name = "Nicolas Steven Miller".split(''), // compensate for ie7 weirdness
                 grays = ['#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa', '#bbb', '#ccc'],
-                i;
+                i,
+                character;
 
             function random_gray() {
                 return grays[4 + Math.floor(Math.random() * (grays.length - 4))];
@@ -42,11 +43,11 @@
             }
 
 			for(i = 0; i < name.length; i++) {
-				    $("#name").append($('<div>')
-                    .addClass('letter sans')
-                    .css({'float': 'left', 'color': grays[0]})
-		            .hover(set_color(random_gray()), animate_to_color(grays[0]))
-                    .html(name[i] === ' ' ? '&nbsp' : name[i]));
+		        $("#name").append($('<div>')
+                .addClass('letter sans')
+                .css({'float': 'left', 'color': grays[0]})
+		        .hover(set_color(random_gray()), animate_to_color(grays[0]))
+                .html(name[i] === ' ' ? '&nbsp' : name[i]));
 			}
 			
 			$("#name")
