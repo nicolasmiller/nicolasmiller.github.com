@@ -48,7 +48,7 @@ ul {
 }
 
 .container {
-    width: 570px; 
+    width: 590px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
@@ -58,11 +58,15 @@ ul {
     width: 220px; 
     margin-right: 100px;
     display: inline-block;
+    zoom: 1;
+    *display: inline;
 }
 
 .grid-container {
-    display: inline-block; 
     margin-bottom: 20px;
+    display: inline-block; 
+    zoom: 1;
+    *display: inline;
 }
 
 .standalone {
