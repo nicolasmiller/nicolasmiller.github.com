@@ -5,6 +5,7 @@ var START_Y = 0;
 var newBlock = true;
 var current;
 var current_type;
+var current_color;
 var current_x;
 var current_y;
 var score = 0;
@@ -109,11 +110,11 @@ function lostGame() {
 }
 
 function on(x, y) {
-	$("#" + String(x) + "_" + String(y)).addClass("on");
+	$("#" + String(x) + "_" + String(y)).addClass("on").css('background-color', current_color);
 }
 
 function off(x, y) { 
-	$("#" + String(x) + "_" + String(y)).removeClass("on");
+	$("#" + String(x) + "_" + String(y)).removeClass("on").css('background-color', '#f0f0f0');
 }
 
 function isOn(x, y) {
@@ -269,13 +270,8 @@ function updateScore() {
 }
 
 function newGame() {
-	$("#youlose").toggle();
 	clearScreen();
-	score = 0;
-	$("#score").html(score);
-	main_interval = setInterval(function () {
-		main();
-	}, clock_period_ms);
+	main_interval = setInterval(main, clock_period_ms);
 }
 
 function initializeKeyboardInput() {
@@ -309,23 +305,27 @@ function initializeKeyboardInput() {
 			rotate();
 			drawBlock(current_x, current_y);
 		}
-		else if(code == 110) {
-			newGame();
-		}
 	});
 }
 
 function main() {
+    function random_gray() {
+        var grays = ['#333', '#444', '#555', '#666', '#777', '#888', '#999'];
+        return grays[Math.floor(Math.random() * grays.length)];
+    }
+
 	if(newBlock) {
 		if(lostGame()) {
-			$("#youlose").toggle();
 			fillScreen();
 			clearInterval(main_interval);
+			setTimeout(newGame, 2000);
 			return;
 		}
 		removeFullRows();
 		updateScore();
 		current_type = randomBlock();
+        current_color = random_gray();
+        console.log(current_color);
 		current = jQuery.extend(true, [], blocks[current_type]);
 		drawBlock(START_X, START_Y);
 		current_x = START_X;
@@ -343,7 +343,6 @@ function main() {
 }
 
 $(document).ready(function() {
-	$("#youlose").toggle();
 	var x;
 	var y;
 	var i;
@@ -354,9 +353,5 @@ $(document).ready(function() {
 	}
 
 	initializeKeyboardInput();
-
-	main_interval = setInterval(function () {
-		main();
-	}, clock_period_ms);
-
+	newGame();
 });

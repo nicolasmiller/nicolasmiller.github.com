@@ -1,44 +1,71 @@
 <!doctype html>
 <html>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="Scripts/jquery.animate-colors-min.js" type="text/javascript"></script>
 	<script src="Scripts/gwyon.js" type="text/javascript"></script>
 	<head>
 		<title>
-			untitled block game!
+            Nicolas Steven Miller
 		</title>
 		<link href="gwyon.css" rel="stylesheet" type="text/css">
 	</head>
-	<body>
-		<table>
-			<tr>
-				<td>
-					<ul id="grid">
-					</ul>
-				</td>
-				<td>
-					<div style="margin-left: 10px">
-						<br>
-						<b>Score</b>
-						<div id="score">
-						</div>
-						<br>
-						'w' - Rotate
-						<br>
-						's' - Down
-						<br>
-						'a' - Left
-						<br>
-						'd' - Right
-						<br>
-						<br>
-						<div id="youlose">
-							<b style="color: red; font-size: 16pt">You Lose.</b>
-							<br>
-							<a href="javascript:newGame()">Start a new game.</a>
-						</div>
-					</div>
-				</td>
-			</tr>
-		</table>
+	<body class="sans">
+        <div class="container">
+		    <div id="name">
+		    </div>
+		    <div class="grid-container">
+		        <ul id="grid">
+		        </ul>
+		    </div>
+        </div>
 	</body>
+	<script>
+		$(document).ready(function () {
+			var name = "Nicolas Steven Miller",
+                grays = ['#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa', '#bbb', '#ccc'];
+
+            function random_gray() {
+                return grays[4 + Math.floor(Math.random() * (grays.length - 4))];
+            }
+
+            function set_color(color) {
+                return function() {
+                    $(this).css('color', color);
+                }
+            }
+
+            function animate_to_color(c) {
+                return function() {
+	                $(this).animate({color: c});
+                }
+            }
+
+			for(var i = 0; i < name.length; i++) {
+				    var character = name[i] === ' ' ? '&nbsp' : name[i];
+				    $("#name").append($('<div>').addClass('letter sans').html(character)
+                                .css('float', 'left')
+                                .css('color', grays[0])
+							    .hover(set_color(random_gray()),
+                                   animate_to_color(grays[0])));
+			}
+			
+			$("#name")
+                .append($('<a>').addClass('link').css('color', grays[2]).attr('href', 'http://www.github.com/nicolasmiller').html('Github')
+							.hover(set_color(grays[0]),
+                                   animate_to_color(grays[2])))
+
+				.append($('<a>').addClass('link').css('color', grays[3]).attr('href', 'nsmresume.pdf').html('Resum\u00E9')
+							.hover(set_color(grays[0]),
+                                   animate_to_color(grays[3])))
+
+				.append($('<a>').addClass('link').css('color', grays[4]).attr('href', 'http://soundcloud.com/nicolas-steven-miller').html('Soundcloud')
+							.hover(set_color(grays[0]),
+                                   animate_to_color(grays[4])))
+
+				.append($('<div>').addClass('link').css('color', grays[5]).html('Control: WSAD')
+							.hover(set_color(grays[0]),
+                                   animate_to_color(grays[5])));
+
+		});
+	</script>
 </html>
