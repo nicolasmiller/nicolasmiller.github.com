@@ -45,17 +45,23 @@ function rotate() {
 	if(current_type == "o") {
 		return;
 	}
-	var i;
-	var rotated = jQuery.extend(true, [], blocks["i"]);
-	var rotateLegal = true;
+	var i,
+	    rotated = jQuery.extend(true, [], blocks["i"]),
+	    rotateLegal = true,
+        x,
+        y,
+        x_prime,
+        y_prime,
+        x_prime_pos,
+        y_prime_pos;
 
 	for(i = 0; i < current.length; i++) {
-		var x = current[i][0];
-		var y = current[i][1];
-		var x_prime = -1 * y;
-		var y_prime = x;
-		var x_prime_pos = x_prime + current_x;
-		var y_prime_pos = y_prime + current_y; 
+		x = current[i][0];
+		y = current[i][1];
+		x_prime = -1 * y;
+		y_prime = x;
+		x_prime_pos = x_prime + current_x;
+		y_prime_pos = y_prime + current_y; 
 		if(x_prime_pos < 0 || y_prime_pos < 0) rotateLegal = false;
 		if(x_prime_pos >= width || y_prime_pos >= height) rotateLegal = false;
 		if(isOn(x_prime_pos, y_prime_pos)) {
@@ -99,7 +105,6 @@ function randomBlock() {
 function lostGame() {
 	var col;
 
-	// see if the top row is empty
 	for(col = 0; col < width; col++) {
 		if(isOn(col, 0)) {
 			return true;
@@ -229,10 +234,10 @@ function hitBottom() {
 }
 
 function removeFullRows() {
-	var row;
-	var col;
-	var rowsToRemove = [];
-	var isFull;
+	var row,
+	    col,
+	    rowsToRemove = [],
+	    isFull;
 	for(row = height - 1; row >= 0; row--) {
 		isFull = true;
 		for(col = 0; col < width; col++) {
@@ -342,9 +347,9 @@ function main() {
 }
 
 $(document).ready(function() {
-	var x;
-	var y;
-	var i;
+	var x,
+	    y,
+	    i;
 	for(y = 0; y < height; y++) {	
 		for(x = 0; x < width; x++) {
 			$("#grid").append("<li id=" + String(x) + "_" + String(y) + "></li>");
