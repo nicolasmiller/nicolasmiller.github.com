@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+  <!-- <script src="Scripts/jquery.animate-colors-min.js" type="text/javascript"></script> -->
+  <!-- <script src="Scripts/gwyon.js" type="text/javascript"></script> -->
+  <head>
+    <title>
+      Kosmische
+    </title>
+    <link href="kosmische.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="sans">
+    <div class="container">
+      <img src="kosmische_192.png">
+      <div class="title">
+        Kosmische
+      </div>
+      <div class="body" style="margin-top: 20px;">
+        Kosmische is a virtual analog synthesizer and algorithmic sequencer for Android devices. 
+        It features:
+        <ul>
+          <li>Two multi-waveform oscillators: Saw, Pulse, Sine, Noise</li>
+          <li>A Moog-style resonant lowpass filter</li>
+          <li>Two multi-waveform, routable LFOs: Sin, Triangle, Pulse, Random</li>
+          <li>Indepdent filter and amp envelopes</li>
+          <li>Tuneable delay and reverb</li>
+          <li>An analog-style step sequencer</li>
+          <li>A scale-derived random pattern generator</li>
+          <li>Independent patch and pattern memory</li>
+          <li>Random patch generation</li>
+        </ul>
+        Kosmische is an open source project released under the GPLv3. The source code is available here: <a href="https://github.com/nicolasmiller/kosmische">https://github.com/nicolasmiller/kosmische</a>.
+      </div>
+    </div>
+    <img src="kosmische_screen.png" class="screen">
+    <div class="container" style="margin-top: 40px;">
+      <div class="subtitle">
+        Usage
+      </div>
+      <div div="body" style="margin-top: 10px">
+        Kosmische's user interface consists of several types of widgets: sliders, knobs, scrollboxes, choiceboxes and buttons. Sliders and knobs are drawn as a rectangular outline and white fill which indicates the current value. To adjust, touch and scroll or simply tap at a particular location. Scrollboxes are used to select one of several named alternatives. These are used to specify LFO targets, patch and pattern memory locations and the type of musical scale used by the pattern generator. Touch and scroll to choose a desired value. Choiceboxes present four alternatives, one of which may be selected at a given time. These are used to specify oscillator and LFO waveforms. Simply touch the desired value.
+<p>
+        The UI has several logical sections. The oscillator section is in the upper left and consists of two identical copies of oscillator controls, one for each oscillator. The controls for each oscillator are (clockwise): shape, coarse tune (-12 to 12 semitones), level, detune and pulsewidth (affects the Pulse shape only).
+</p>
+<p>
+The filter section is in the top center of the screen and consists of two knobs, one for cutoff frequency and one for resonance.
+Directly below the filter section is the LFO section. Here, mirroring the oscillator section, there are two copies of similar controls, one for each LFO. There is, left to right, a choicebox for LFO shape, then sliders for Frequency and Depth, and finally, a scrollbox for specifying the LFO target.
+</p>
+
+<p>
+The envelope section is in the upper right with amp on top and filter on the bottom. Each has its own slider for Attack, Decay, Sustain and Release. The filter envelope has an amount slider as well which controls the depth of modulation.
+</p>
+
+<p>
+Below all of this is the step sequencer section. Each step button can be enabled or disabled by tapping. Additionally, the note to be played at a particular step can be adjusted by touching and scrolling up or down.
+</p>
+
+<p>
+In the bottom left, there are controls to operate the sequencer and patch memory. The play button toggles playback. The reverse button reverses the direction of the sequence from its current position. The tempo slider controls tempo in BPM. The random patch and random pattern buttons each do the expected thing. The random pattern generated is derived from the particular scale specified in the scroll box directly above the random pattern button.
+</p>
+<p>
+To the right of this, there are two scrollboxes to control the currently targeted patch and pattern memory locations. The associated load and save buttons will trigger a write to or a read from the selected location.
+</p>
+<p>
+In the bottom right, there are several additional sliders to control effects processing (from left to right): delay mix, delay time, feedback, reverb mix, reverb room size and reverb dampening.
+</p>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+a:link, a:active, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #f0f0f0 ;
+    color: black;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 38pt;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.body {
+    font-weight: normal;
+    font-size: 12pt;
+}
+
+.link {
+	float: left;
+	font-size: 30pt;
+	font-weight: bold;
+}
+
+.sans {
+	font-family: 'Helvetica', 'Arial', 'Deja Vu Sans', sans-serif;
+}
+
+.container {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+img.screen {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* img.screen { */
+/*   -webkit-transform: scale(0.5); /\* Saf3.1+, Chrome *\/ */
+/*      -moz-transform: scale(0.5); /\* FF3.5+ *\/ */
+/*       -ms-transform: scale(0.5); /\* IE9 *\/ */
+/*        -o-transform: scale(0.5); /\* Opera 10.5+ *\/ */
+/*           transform: scale(0.5); */
+/*              /\* IE6–IE9 *\/ */
+/*              filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.9999619230641713, M12=-0.008726535498373935, M21=0.008726535498373935, M22=0.9999619230641713,SizingMethod='auto expand'); */
+/* }​ */
