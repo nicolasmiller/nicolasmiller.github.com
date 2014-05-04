@@ -51,25 +51,31 @@
 			}
 			
 			$("#name")
-                .append($('<a>') // link 1
+                .append($('<a>')
+                .addClass('link')
+                .css('color', grays[2])
+                .attr('href', 'http://nicolasmiller.github.io/kosmische.html')
+                .html('Kosmische')
+				.hover(set_color(grays[0]), animate_to_color(grays[2])))
+                .append($('<a>')
                 .addClass('link')
                 .css('color', grays[2])
                 .attr('href', 'http://www.github.com/nicolasmiller')
                 .html('Github')
 				.hover(set_color(grays[0]), animate_to_color(grays[2])))
-				.append($('<a>') // link 2
+		.append($('<a>')
                 .addClass('link')
                 .css('color', grays[3])
                 .attr('href', 'nsmresume.pdf')
                 .html('R\u00E9sum\u00E9')
 				.hover(set_color(grays[0]), animate_to_color(grays[3])))
-				.append($('<a>') // link 3
+		.append($('<a>')
                 .addClass('link')
                 .css('color', grays[4])
                 .attr('href', 'http://soundcloud.com/nicolas-steven-miller')
                 .html('Soundcloud')
 				.hover(set_color(grays[0]), animate_to_color(grays[4])))
-				.append($('<div>') // control label
+		.append($('<div>')
                 .addClass('link')
                 .css('color', grays[5])
                 .html('Control: WSAD')
