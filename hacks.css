@@ -1,0 +1,53 @@
+a:link, a:active, a:visited {
+//    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+body {
+    background-color: #f0f0f0 ;
+    color: black;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 38pt;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.body {
+    font-weight: normal;
+    font-size: 12pt;
+}
+
+.link {
+	float: left;
+	font-size: 30pt;
+	font-weight: bold;
+}
+
+.sans {
+	font-family: 'Helvetica', 'Arial', 'Deja Vu Sans', sans-serif;
+}
+
+.container {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+img.screen {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
