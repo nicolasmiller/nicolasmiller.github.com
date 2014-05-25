@@ -20,6 +20,7 @@ var Hiptactoe = (function() {
     cell_width = 200,
     canvas_width = 620,
     divider_width = 10,
+    o_width = 20,
     icon_center = cell_width / 2,
     icon_offset = cell_width + divider_width,
     canvas = document.getElementById("main"),
@@ -337,9 +338,9 @@ var Hiptactoe = (function() {
     }
 
     function draw_o(x, y) {
-        p.ellipse(icon_center + icon_offset * x, icon_center + icon_offset * y, 180, 180);
+        p.ellipse(icon_center + icon_offset * x, icon_center + icon_offset * y, cell_width - o_width, cell_width - o_width);
         p.fill(background_color);
-        p.ellipse(icon_center + icon_offset * x, icon_center + icon_offset * y, 160, 160);
+        p.ellipse(icon_center + icon_offset * x, icon_center + icon_offset * y, cell_width - 2 * o_width, cell_width - 2 * o_width);
         p.fill(fill_color);
     }
 
