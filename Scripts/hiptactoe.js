@@ -224,7 +224,6 @@ var Hiptactoe = (function() {
             p.size(canvas_width, canvas_width);
             p.frameRate(30);
             p.fill(fill_color);
-            console.log(p.PFont.list());
             font = p.createFont("sans-serif", 45);
             p.textFont(font, 45);
 
