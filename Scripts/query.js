@@ -4,13 +4,8 @@ jQuery.extend({
     }
 });
 
-
 var queryParams = $.getQueryParameters();
+
 $(document).ready(function() {
-    console.log('iframe');
-    console.log(document.getElementById("iframe"));
-    setTimeout(function() {
-        console.log('firing');
-    document.getElementById("iframe").contentWindow.postMessage("This is a message", location.origin)
-}, 5000);
+    document.getElementById("iframe").contentWindow.postMessage(queryParams['url'], location.origin);
 });

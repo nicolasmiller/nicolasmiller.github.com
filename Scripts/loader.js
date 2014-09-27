@@ -9,7 +9,9 @@ $(document).ready(function() {
 
     function receiveMessage(event)
     {
-        console.log(event);
+        if(event.origin == "http://nicolasmiller.github.io") {
+            console.log(event);
+        }
     }
 
     addEventListener("message", receiveMessage, false);
