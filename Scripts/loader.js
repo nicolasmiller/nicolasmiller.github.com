@@ -1,4 +1,4 @@
-$(document).ready(function() {
+//$(document).ready(function() {
     // $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?', function(data){
     //     var html = "" + data.contents;
         
@@ -15,4 +15,4 @@ $(document).ready(function() {
     }
 
     addEventListener("message", receiveMessage, false);
-});
+//});

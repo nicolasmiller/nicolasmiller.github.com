@@ -7,5 +7,8 @@ jQuery.extend({
 var queryParams = $.getQueryParameters();
 
 $(document).ready(function() {
-    document.getElementById("iframe").contentWindow.postMessage(queryParams['url'], location.origin);
+    setTimeout(function() {
+        console.log('firing');
+        document.getElementById("iframe").contentWindow.postMessage(queryParams['url'], location.origin);
+    }, 1000);
 });
