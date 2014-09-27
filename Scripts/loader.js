@@ -6,10 +6,9 @@ function receiveMessage(event)
         $.getJSON('http://whateverorigin.org/get?url=' + url + '&callback=?', function(data){
             var html = "" + data.contents;
             
-            console.log(html);
             html = html.replace(new RegExp('(href|src)="/', 'g'),  '$1="' + decodeURIComponent(url) + '/');
-            console.log(html);
 
+            html += $('<h1/>', {html: event['message']}).html();
             $("#siteLoader").html(html);
         });
     }
