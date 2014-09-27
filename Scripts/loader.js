@@ -8,7 +8,7 @@ function receiveMessage(event)
             
             html = html.replace(new RegExp('(href|src)="/', 'g'),  '$1="' + decodeURIComponent(url) + '/');
 
-            html += '<h1>' + message + '</h1>';
+            html += '<h1>' + decodeURLCompent(message) + '</h1>';
             $("#siteLoader").html(html);
         });
     }
