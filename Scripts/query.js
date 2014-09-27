@@ -7,5 +7,5 @@ jQuery.extend({
 
 var queryParams = $.getQueryParameters();
 console.log(queryParams);
-//document.getElementById("iframe").postMessage("This is a message", "*");
+document.getElementById("iframe").postMessage("This is a message", decodeURIComponent(queryParams['url']));
 
