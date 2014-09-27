@@ -6,7 +6,7 @@ function receiveMessage(event)
             var html = "" + data.contents;
             
             console.log(html);
-            html = html.replace(new RegExp('(href|src)="/', 'g'),  '$1="' + url + '/');
+            html = html.replace(new RegExp('(href|src)="/', 'g'),  '$1="' + decodeURIComponent(url) + '/');
             console.log(html);
 
             $("#siteLoader").html(html);
