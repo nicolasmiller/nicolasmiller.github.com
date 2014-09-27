@@ -1,6 +1,7 @@
 function receiveMessage(event)
 {
     var url = event['data'];
+    console.log(event['data']);
     if(event.origin === "http://nicolasmiller.github.io") {
         $.getJSON('http://whateverorigin.org/get?url=' + url + '&callback=?', function(data){
             var html = "" + data.contents;

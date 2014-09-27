@@ -8,7 +8,6 @@ var queryParams = $.getQueryParameters();
 
 $(document).ready(function() {
     setTimeout(function() {
-        console.log('firing');
-        document.getElementById("iframe").contentWindow.postMessage(queryParams['url'], location.origin);
-    }, 1000);
+        document.getElementById("iframe").contentWindow.postMessage(queryParams, location.origin);
+    }, 100);
 });
