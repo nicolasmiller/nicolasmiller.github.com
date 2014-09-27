@@ -8,7 +8,7 @@ $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent(url) + '&cal
 
 function receiveMessage(event)
 {
-  alert(event.data);
+  console.log(event);
 }
 
 addEventListener("message", receiveMessage, false);
