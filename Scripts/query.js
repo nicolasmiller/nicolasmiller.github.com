@@ -6,12 +6,11 @@ jQuery.extend({
 
 
 var queryParams = $.getQueryParameters();
-console.log(queryParams);
 $(document).ready(function() {
     console.log('iframe');
     console.log(document.getElementById("iframe"));
     setTimeout(function() {
         console.log('firing');
-    document.getElementById("iframe").contentWindow.postMessage("This is a message", decodeURIComponent(queryParams['url']))
+    document.getElementById("iframe").contentWindow.postMessage("This is a message", location.origin)
 }, 5000);
 });
