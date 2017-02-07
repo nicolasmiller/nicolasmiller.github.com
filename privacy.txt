@@ -1,0 +1,9 @@
+Kosmische Privacy Policy
+------------------------
+
+Kosmische's codebase currently requires the android.permission.RECORD_AUDIO
+permission for compatibility with a dependency that it uses for audio synthesis.
+The feature is currently unimplemented and unused. There is no user accessible way to
+record audio at this time, and the application itself does not record or store any
+audio. Additionally, Kosmische is a completely local application; it does not
+communicate with a backend server at all.
